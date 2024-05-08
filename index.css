@@ -1,0 +1,46 @@
+/* Estils per a la Carta */
+carta-component {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+  }
+  
+  /* Estils per als Plats de la Carta */
+  #plats {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #plats li {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  #plats li img {
+    max-width: 100px;
+  }
+  
+  /* Estils per a la Comanda */
+  comanda-component {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+  }
+  
+  /* Estils per als Plats de la Comanda */
+  #plats-comanda {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #plats-comanda li {
+    margin-bottom: 10px;
+  }
+  
+  /* Estils per als botons d'incrementar i disminuir quantitat */
+  .plat-comanda-component button {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
