@@ -40,6 +40,8 @@ div.bebidas {
 div.cuenta {
   height: 100%;
   border: solid 2px black;
+  overflow-y: auto;
+  max-height: 1272px;
 }
 
 .plato {
