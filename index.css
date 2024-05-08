@@ -1,45 +1,41 @@
-/* Estils per a la Carta */
-carta-component {
-  display: inline-block;
-  width: 50%;
-  vertical-align: top;
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-/* Estils per als Plats de la Carta */
-#plats {
-  list-style: none;
-  padding: 0;
+div.tituloDiv {
+  background-color: orange;
+  height: 125px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#plats li {
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  padding: 10px;
+div.container {
+  background-color: green;
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  display: flex;
 }
 
-#plats li img {
-  max-width: 100px;
+div.comida.col-md-9 {
+  background-color: red;
 }
 
-/* Estils per a la Comanda */
-comanda-component {
-  display: inline-block;
-  width: 50%;
-  vertical-align: top;
+div.cuenta.col-md-3 {
+  background-color: orange;
 }
 
-/* Estils per als Plats de la Comanda */
-#plats-comanda {
-  list-style: none;
-  padding: 0;
+/* div.container {
+  background-color: red;
+  display: flex;
+  padding: 0px;
 }
 
-#plats-comanda li {
-  margin-bottom: 10px;
-}
-
-/* Estils per als botons d'incrementar i disminuir quantitat */
-.plat-comanda-component button {
-  margin-left: 5px;
-  cursor: pointer;
-}
+div.platos{
+  background-color: green;
+  height: 100%;
+  width: 100%;
+} */
