@@ -1,123 +1,223 @@
-// index.js
+// Primeros platos
+const primerosPlatos = [
+  {
+    nombrePlato: "Ensalada César",
+    imagen: "EnsaladaCesar.png",
+    precio: 12.5,
+    alergenos: ["Gluten", "Lácteos"],
+    categoria: "primerPlato",
+  },
+  {
+    nombrePlato: "Sopa de Tomate",
+    imagen: "SopaTomate.png",
+    precio: 8.0,
+    alergenos: ["Gluten"],
+    categoria: "primerPlato",
+  },
+  {
+    nombrePlato: "Carpaccio de Res",
+    imagen: "CarpaccioRes.png",
+    precio: 15.75,
+    alergenos: ["Lácteos"],
+    categoria: "primerPlato",
+  },
+];
 
-class CartaComponent extends HTMLElement {
-  constructor() {
-    super();
-    this.platos = [
-      {
-        nombrePlato: "Paella",
-        imagen: "./img/paella.jpg",
-        precio: 12,
-        alergenos: "Gluten, Mariscos",
-        descripcion: "Deliciosa paella con mariscos y arroz en su punto.",
-      },
-      {
-        nombrePlato: "Paella",
-        imagen: "./img/paella.jpg",
-        precio: 12,
-        alergenos: "Gluten, Mariscos",
-      },
-      {
-        nombrePlato: "Tortilla de patatas",
-        imagen: "./img/tortilla.jpg",
-        precio: 8,
-        alergenos: "Huevos, Lactosa",
-      },
-      {
-        nombrePlato: "Gazpacho",
-        imagen: "./img/gazpacho.jpg",
-        precio: 6,
-        alergenos: "Apio, Ajo",
-      },
-      {
-        nombrePlato: "Jamón ibérico",
-        imagen: "./img/jamon.jpg",
-        precio: 15,
-        alergenos: "",
-      },
-      {
-        nombrePlato: "Pulpo a la gallega",
-        imagen: "./img/pulpo.jpg",
-        precio: 14,
-        alergenos: "Moluscos, Ajo",
-      },
-      {
-        nombrePlato: "Patatas bravas",
-        imagen: "./img/patatas_bravas.jpg",
-        precio: 7,
-        alergenos: "Gluten, Ajo",
-      },
-      {
-        nombrePlato: "Crema catalana",
-        imagen: "./img/crema_catalana.jpg",
-        precio: 5,
-        alergenos: "Lactosa, Huevos",
-      },
-      {
-        nombrePlato: "Flan",
-        imagen: "./img/flan.jpg",
-        precio: 4,
-        alergenos: "Lactosa, Huevos",
-      },
-      {
-        nombrePlato: "Tarta de chocolate",
-        imagen: "./img/tarta_chocolate.jpg",
-        precio: 6,
-        alergenos: "Gluten, Lactosa",
-      },
-      {
-        nombrePlato: "Vino tinto",
-        imagen: "./img/vino_tinto.jpg",
-        precio: 3,
-        alergenos: "",
-      },
-      {
-        nombrePlato: "Cerveza",
-        imagen: "./img/cerveza.jpg",
-        precio: 2,
-        alergenos: "",
-      },
-      {
-        nombrePlato: "Agua mineral",
-        imagen: "./img/agua_mineral.jpg",
-        precio: 1,
-        alergenos: "",
-      },
-    ];
-  }
+// Segundos platos
+const segundosPlatos = [
+  {
+    nombrePlato: "Filete de Salmón",
+    imagen: "FileteSalmon.png",
+    precio: 18.9,
+    alergenos: ["Pescado"],
+    categoria: "segundoPlato",
+  },
+  {
+    nombrePlato: "Lasaña de Verduras",
+    imagen: "LasañaVerduras.png",
+    precio: 14.25,
+    alergenos: ["Gluten", "Lácteos"],
+    categoria: "segundoPlato",
+  },
+  {
+    nombrePlato: "Pollo al Curry",
+    imagen: "PolloCurry.png",
+    precio: 16.5,
+    alergenos: ["Lácteos"],
+    categoria: "segundoPlato",
+  },
+];
 
-  connectedCallback() {
-    this.render();
-  }
+// Postres
+const postres = [
+  {
+    nombrePlato: "Tiramisú",
+    imagen: "Tiramisu.png",
+    precio: 9.5,
+    alergenos: ["Gluten", "Lácteos"],
+    categoria: "postre",
+  },
+  {
+    nombrePlato: "Coulant de Chocolate",
+    imagen: "CoulantChocolate.png",
+    precio: 10.75,
+    alergenos: ["Gluten", "Lácteos"],
+    categoria: "postre",
+  },
+  {
+    nombrePlato: "Frutas de Temporada",
+    imagen: "FrutasTemporada.png",
+    precio: 7.0,
+    alergenos: [],
+    categoria: "postre",
+  },
+];
 
-  render() {
-    const cartaContainer = document.createElement("div");
-    cartaContainer.classList.add("carta-container");
+// Bebidas
+const bebidas = [
+  {
+    nombrePlato: "Vino Tinto",
+    imagen: "VinoTinto.png",
+    precio: 20.0,
+    alergenos: [],
+    categoria: "bebida",
+  },
+  {
+    nombrePlato: "Agua Mineral",
+    imagen: "AguaMineral.png",
+    precio: 3.0,
+    alergenos: [],
+    categoria: "bebida",
+  },
+  {
+    nombrePlato: "Refresco de Limón",
+    imagen: "RefrescoLimon.png",
+    precio: 4.5,
+    alergenos: ["Gluten"],
+    categoria: "bebida",
+  },
+];
 
-    this.platos.forEach((plato) => {
-      const platItem = document.createElement("div");
-      platItem.classList.add("plato");
+let totalCuenta = 0;
+let platosEnLista = [];
 
-      platItem.innerHTML = `
-        <img src="${plato.imagen}" alt="${plato.nombrePlato}">
-        <div class="info">
-          <h3>${plato.nombrePlato}</h3>
-          <p>${plato.descripcion}</p>
-          <p><strong>Alergenos:</strong> ${plato.alergenos}</p>
-          <button class="btn-add" data-nombre="${plato.nombrePlato}" data-imagen="${plato.imagen}" data-precio="${plato.precio}">Añadir al menú</button>
-        </div>
-      `;
+// Obtener referencias a los contenedores de cada tipo de plato
+const primerPlatoContainer = document.querySelector(".primerPlato");
+const segundoPlatoContainer = document.querySelector(".segundoPlato");
+const postreContainer = document.querySelector(".postre");
+const bebidasContainer = document.querySelector(".bebidas");
 
-      platItem.querySelector(".btn-add").addEventListener("click", () => {
-        const event = new CustomEvent("plat-added", { detail: plato });
-        this.dispatchEvent(event);
-      });
+function crearCartaPlato(plato) {
+  const carta = document.createElement("div");
+  carta.classList.add("card");
 
-      cartaContainer.appendChild(platItem);
-    });
+  carta.style.height = "25rem";
+  carta.style.width = "14rem";
 
-    this.appendChild(cartaContainer);
-  }
+  const imagen = document.createElement("img");
+  imagen.classList.add("card-img-top");
+  imagen.style.height = "222px";
+  imagen.src = `img/${plato.imagen}`;
+  imagen.alt = plato.nombrePlato;
+
+  const cuerpoCarta = document.createElement("div");
+  cuerpoCarta.classList.add("card-body", "d-flex", "flex-column");
+
+  const titulo = document.createElement("h5");
+  titulo.classList.add("card-title");
+  titulo.textContent = plato.nombrePlato;
+
+  const precio = document.createElement("p");
+  precio.classList.add("card-text");
+  precio.textContent = `Precio: ${plato.precio.toFixed(2)}€`;
+
+  const alergenos = document.createElement("p");
+  alergenos.classList.add("card-text");
+  alergenos.textContent = `Alergenos: ${plato.alergenos.join(", ")}`;
+
+  const botonAñadir = document.createElement("button");
+  botonAñadir.classList.add("btn", "btn-primary", "w-100", "mt-auto");
+  botonAñadir.textContent = "Añadir";
+  botonAñadir.addEventListener("click", () => {
+    agregarPlatoALista(plato);
+  });
+
+  cuerpoCarta.appendChild(titulo);
+  cuerpoCarta.appendChild(precio);
+  cuerpoCarta.appendChild(alergenos);
+  cuerpoCarta.appendChild(botonAñadir);
+
+  carta.appendChild(imagen);
+  carta.appendChild(cuerpoCarta);
+
+  return carta;
 }
 
-customElements.define("carta-component", CartaComponent);
+function mostrarPlatos(platos, contenedor) {
+  contenedor.innerHTML = "";
+
+  platos.forEach((plato) => {
+    const carta = crearCartaPlato(plato);
+    contenedor.appendChild(carta);
+  });
+}
+
+mostrarPlatos(primerosPlatos, primerPlatoContainer);
+
+mostrarPlatos(segundosPlatos, segundoPlatoContainer);
+
+mostrarPlatos(postres, postreContainer);
+
+mostrarPlatos(bebidas, bebidasContainer);
+
+function agregarPlatoALista(plato) {
+  const listaPlatos = document.querySelector(".listaPlatos");
+
+  const platoElemento = document.createElement("div");
+  platoElemento.classList.add("plato");
+
+  const tituloPlato = document.createElement("h5");
+  tituloPlato.textContent = plato.nombrePlato;
+
+  const precioPlato = document.createElement("p");
+  precioPlato.textContent = `Precio: ${plato.precio.toFixed(2)}€`;
+
+  const botonEliminar = document.createElement("button");
+  botonEliminar.classList.add(
+    "btn",
+    "btn-danger",
+    "w-100",
+    "mt-auto",
+    "eliminar"
+  );
+  botonEliminar.textContent = "Eliminar";
+  botonEliminar.addEventListener("click", () => {
+    eliminarPlatoDeLista(plato, platoElemento);
+  });
+
+  platoElemento.appendChild(tituloPlato);
+  platoElemento.appendChild(precioPlato);
+  platoElemento.appendChild(botonEliminar);
+
+  listaPlatos.appendChild(platoElemento);
+
+  platosEnLista.push(plato);
+
+  totalCuenta += plato.precio;
+  actualizarTotalCuenta();
+}
+
+function actualizarTotalCuenta() {
+  const totalCuentaElemento = document.querySelector(".totalCuenta");
+  totalCuentaElemento.innerHTML = `<h3>Total: ${totalCuenta.toFixed(2)}€</h3>`;
+}
+
+function eliminarPlatoDeLista(plato, platoElemento) {
+  const index = platosEnLista.indexOf(plato);
+  if (index !== -1) {
+    platosEnLista.splice(index, 1);
+    platoElemento.remove();
+    totalCuenta -= plato.precio;
+    actualizarTotalCuenta();
+  }
+}

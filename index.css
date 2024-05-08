@@ -4,7 +4,6 @@
 }
 
 div.tituloDiv {
-  background-color: orange;
   height: 125px;
   width: 100%;
   display: flex;
@@ -12,30 +11,46 @@ div.tituloDiv {
   justify-content: center;
 }
 
-div.container {
-  background-color: green;
+div.restaurante {
   height: 100%;
   width: 100%;
-  padding: 0px;
   display: flex;
+  justify-content: center;
 }
 
-div.comida.col-md-9 {
-  background-color: red;
-}
-
-div.cuenta.col-md-3 {
-  background-color: orange;
-}
-
-/* div.container {
-  background-color: red;
+div.primerPlato,
+div.segundoPlato,
+div.postre {
+  border: solid 2px black;
+  padding: 10px;
   display: flex;
-  padding: 0px;
+  align-items: center;
+  justify-content: space-around;
 }
 
-div.platos{
-  background-color: green;
+div.bebidas {
   height: 100%;
-  width: 100%;
-} */
+  border: solid 2px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+div.cuenta {
+  height: 100%;
+  border: solid 2px black;
+}
+
+.plato {
+  border: solid 1px black;
+  margin: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+div.totalCuenta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
