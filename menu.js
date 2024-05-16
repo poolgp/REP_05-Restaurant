@@ -1,4 +1,4 @@
-class MenuComponent extends HTMLElement {
+class Menu extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
         <div class="restaurante">
@@ -12,13 +12,13 @@ class MenuComponent extends HTMLElement {
                     <ul id="segundoPlato"></ul>
                 </div>
                 <div class="postre">
-                    <h2>postres</h2>
+                    <h2>Postres</h2>
                     <ul id="postres"></ul>
                 </div>
             </div>
             <div class="listabebidass col-md-3">
                 <div class="bebidass">
-                    <h2>bebidass</h2>
+                    <h2>Bebidas</h2>
                     <ul id="bebidass"></ul>
                 </div>
             </div>
@@ -117,21 +117,29 @@ class MenuComponent extends HTMLElement {
       },
     ];
 
-    platos.forEach((Plato) => {
+    platos.forEach((plato) => {
       const listItem = document.createElement("li");
       listItem.innerHTML = `
-          <div>
-            <img src="${Plato.imagen}" alt="${Plato.nombrePlato}" width="100">
-            <h3>${Plato.nombrePlato}</h3>
-            <p>Preu: ${Plato.precio}€</p>
-            <p>Al·lèrgens: ${Plato.alergenos.join(", ")}</p>
-            <button class="add-to-order" data-nombrePlato="${
-              Plato.nombrePlato
-            }" data-precio="${Plato.precio}">Afegir a la comanda</button>
-          </div>
+            <div class="card" style="width: 18rem;">
+                <img src="${plato.imagen}" class="card-img-top" alt="${
+        plato.nombrePlato
+      }" width="286px" height="180px">
+                <div class="card-body">
+                    <h5 class="card-title">${plato.nombrePlato}</h5>
+                    <p>Precio: ${plato.precio}€</p>
+                    <p>Alergenos: ${plato.alergenos.join(", ")}</p>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary añadir-a-multa" data-nombrePlato="${
+                          plato.nombrePlato
+                        }" data-precio="${
+        plato.precio
+      }" type="button">Añadir a la Multa</button>
+                    </div>
+                </div>
+            </div>
         `;
 
-      switch (Plato.categoria) {
+      switch (plato.categoria) {
         case "primerPlato":
           primerPlatoList.appendChild(listItem);
           break;
@@ -150,10 +158,10 @@ class MenuComponent extends HTMLElement {
     });
 
     this.addEventListener("click", (event) => {
-      if (event.target.classList.contains("add-to-order")) {
+      if (event.target.classList.contains("añadir-a-multa")) {
         const nombrePlato = event.target.dataset.nombrePlato;
         const precio = parseFloat(event.target.dataset.precio);
-        const addToOrderEvent = new CustomEvent("add-to-order", {
+        const addToOrderEvent = new CustomEvent("añadir-a-multa", {
           detail: { nombrePlato, precio },
         });
         document.dispatchEvent(addToOrderEvent);
@@ -162,4 +170,4 @@ class MenuComponent extends HTMLElement {
   }
 }
 
-customElements.define("menu-component", MenuComponent);
+customElements.define("menu-component", Menu);

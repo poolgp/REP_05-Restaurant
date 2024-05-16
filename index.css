@@ -119,11 +119,3 @@ button:hover {
   align-items: center;
   margin-bottom: 10px;
 }
-
-.remove-item {
-  background-color: #dc3545;
-}
-
-.remove-item:hover {
-  background-color: #c82333;
-}
