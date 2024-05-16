@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurante</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Restaurante</title>
 
-    <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="index.css">
 
-    <link rel="icon" href="ruta/al/icono.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="" type="image/x-icon">
-    <link rel="icon" href="img/fork.png" type="image/x-icon">
+        <link rel="icon" href="ruta/al/icono.ico" type="image/x-icon">
+        <link rel="shortcut icon" href type="image/x-icon">
+        <link rel="icon" href="img/fork.png" type="image/x-icon">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous">
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="tituloDiv">
+            <h1>M06 REP_05 - Restaurante</h1>
+        </div>
+
+        <menu-component></menu-component>
+        <order-component></order-component>
+
+        <!-- <menurestaurante></menurestaurante>
+        <cuentarestaurante></cuentarestaurante> -->
+
+    </body>
+
+    <script src="menu.js"></script>
+    <script src="cuenta.js"></script>
+    <script src="itemsCuenta.js"></script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
-</head>
-
-<body>
-    <div class="tituloDiv">
-        <h1>M06 REP_05 - Restaurante</h1>
-    </div>
-
-    <div class="restaurante">
-        <div class="comida col-md-6">
-            <div class="primerPlato"></div>
-            <div class="segundoPlato"></div>
-            <div class="postre"></div>
-        </div>
-        <div class="listaBebidas col-md-3">
-            <div class="bebidas"></div>
-        </div>
-        <div class="listaCuenta col-md-2">
-            <div class="cuenta">
-                <div class="totalCuenta"></div>
-                <div class="listaPlatos"></div>
-            </div>
-        </div>
-    </div>
-</body>
-<script src="index.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-    crossorigin="anonymous"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
 
 </html>
