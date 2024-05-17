@@ -1,10 +1,10 @@
-/* * {
+* {
   margin: 0px;
   padding: 0px;
 }
 
-div.tituloDiv {
-  height: 125px;
+div.titulo {
+  height: 90px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -12,110 +12,16 @@ div.tituloDiv {
 }
 
 div.restaurante {
-  height: 100%;
-  width: 100%;
   display: flex;
-  justify-content: center;
-}
-
-div.primerPlato,
-div.segundoPlato,
-div.postre {
-  border: solid 2px black;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-div.bebidas {
-  height: 100%;
-  border: solid 2px black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-div.cuenta {
-  height: 100%;
-  border: solid 2px black;
-  overflow-y: auto;
-  max-height: 1272px;
-}
-
-.plato {
-  border: solid 1px black;
-  margin: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-div.totalCuenta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.menu-categories {
-  display: flex;
-  justify-content: center;
-}
-
-.menu-category {
-  width: 20%;
-  padding: 50px 100px;
-  box-sizing: border-box;
-}
-
-.menu-category img {
-  width: 60%;
-}
-
-h2 {
-  color: #333;
-}
-
-h3 {
-  margin-top: 0;
 }
 
 ul {
+  margin: 0px;
+  padding: 0px;
   list-style: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 20px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-.order-item {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+}
+
+.vertical-list {
+  display: block;
 }
